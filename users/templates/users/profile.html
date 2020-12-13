@@ -1,0 +1,50 @@
+{%extends 'blog/main.html'%} {%load crispy_forms_tags%} {%block main_part%}
+
+<div class="form-section">
+  <h2>Кабінет користувача</h2>
+  <div class="media text-muted pt-3">
+    <img
+      class="mr-2 rounded"
+      style="width: 64px; height: 64px"
+      src="{{user.profile.img.url}}"
+    />
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">@{{user.username}}</strong>
+      Email: {{user.email}}
+    </p>
+  </div>
+  <h3 class="mt-4">Редагувати профіль</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{update_user|crispy}} {{img_profile|crispy}}
+    <button type="submit" class="btn btn-outline-warning">Оновити данні</button>
+  </form>
+</div>
+
+{%endblock main_part%} {%block intresting_part%}
+<h3><b>Як розкрутити тікток</b></h3>
+<img
+  src="https://www.gbnews.ch/wp-content/gbnews-uploads/2020/03/Tik-Tok-Logo-2.jpeg"
+  class="img-thumbnail mb-1"
+/>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud
+</p>
+<a href="#" target="_blank">
+  <button class="btn btn-warning">Посмотреть</button>
+</a>
+<h3><b>Курс Испанского</b></h3>
+<img
+  src="https://languageplus.info/userfiles/upload/16ef067688dae07125df9899b3bab758.png"
+  class="img-thumbnail mb-1"
+/>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud
+</p>
+<a href="#" target="_blank">
+  <button class="btn btn-warning">Посмотреть</button>
+</a>
+{%endblock intresting_part%}

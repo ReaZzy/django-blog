@@ -1,0 +1,40 @@
+{%extends 'blog/main.html'%} {%load crispy_forms_tags%} {%block main_part%}
+
+<div class="form-section">
+  <h2>Створення нової статті</h2>
+  <form method="post">
+    {% csrf_token %} {{form|crispy}}
+    <button type="submit" class="btn btn-outline-warning">
+      Добавить статтю
+    </button>
+  </form>
+</div>
+
+{%endblock main_part%} {%block intresting_part%}
+<h3><b>Як розкрутити тікток</b></h3>
+<img
+  src="https://www.gbnews.ch/wp-content/gbnews-uploads/2020/03/Tik-Tok-Logo-2.jpeg"
+  class="img-thumbnail mb-1"
+/>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud
+</p>
+<a href="#" target="_blank">
+  <button class="btn btn-warning">Посмотреть</button>
+</a>
+<h3><b>Курс Испанского</b></h3>
+<img
+  src="https://languageplus.info/userfiles/upload/16ef067688dae07125df9899b3bab758.png"
+  class="img-thumbnail mb-1"
+/>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud
+</p>
+<a href="#" target="_blank">
+  <button class="btn btn-warning">Посмотреть</button>
+</a>
+{%endblock intresting_part%}
